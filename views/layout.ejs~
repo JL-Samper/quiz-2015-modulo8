@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title> P2P modulo 6 </title>
+	<link rel='stylesheet' href='/stylesheets/Style.css' />
+</head>
+
+<body>
+<div id="page-wrap">
+	<header class="main_header" id="h1">
+		<h1> Ejercicio P2P modulo 6 </h1>
+	</header>
+
+	<section class="frame-content" id="ms1">
+		<%- body %>
+	</section>
+
+	<footer class="main" id="foot1">
+		<a href="http://google.es"> 
+		Consulta el código en Github </a>
+	</footer>
+</div>
+</body>
+</html>
