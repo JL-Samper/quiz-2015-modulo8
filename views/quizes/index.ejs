@@ -5,3 +5,8 @@
     <tr><td><a href="quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %></a></td></tr>
 <% } %>
 </table>
+<form method="get" action="/quizes">
+    Filtrado por palabras <p>
+    <input type="text" name="search" value="Escriba las palabras a filtrar"/>
+    <input type="submit" value="Enviar"/>
+</form>
