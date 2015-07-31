@@ -2,15 +2,36 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title> P2P modulo 6 </title>
-	<link rel='stylesheet' href='/stylesheets/Style.css' />
+	<title> Quiz </title>
+    <link rel="shortcut icon" href="/images/favicon.ico" >
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' 
+        type='text/css'
+        media='only screen and (min-width: 530px) and (min-device-width: 481px)'
+        href='/stylesheets/wide.css' />
+    <link rel='stylesheet'
+        type='text/css'
+        media='only screen and (max-width: 480px)' 
+        href='/stylesheets/smartphone.css' />
+    
 </head>
 
 <body>
 <div id="page-wrap">
-
+    
 	<header class="main" id="h1">
-		<h1> Ejercicio P2P modulo 6 </h1>
+        <%if(!session.user){%>
+            <span class="right"><a href="/login">Login</a></span>
+        <%}else{%>
+            <span class="right"> <%=session.user.username%>
+                <form method="post" action="/logout?_method=delete"> 
+                    <button type="submit" onClick="return confirm('Esta logueado como: <%=session.user.username%> \n¿Seguro que desea salir?');">
+                        Logout
+                    </button>
+                </form>
+        </span>
+        <%}%>
+		<h1> Quiz 2015 jlse </h1>
 	</header>
 
     <nav class="main" id="n1" role="navigation">
@@ -20,7 +41,15 @@
     </nav>
 
 	<section class="main" id="ms1">
-		<%- body %>
+        <% if (errors.length) { %>
+            <span id='ErrorMsgs'>
+                Corregir errores:<br/>
+                <% for (var i in errors) {%>
+                    <span> <%= errors[i].message %></span><br/>
+                <% } %>
+        </span>
+        <% } %> 
+		<div><%- body %></div>
 	</section>
 
 	<footer class="main" id="foot1">
