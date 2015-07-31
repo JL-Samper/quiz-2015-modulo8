@@ -57,7 +57,7 @@ exports.answer = function(req,res) {
 
 exports.new = function (req,res) {
     var quiz=models.Quiz.build( //crear objeto quiz
-        {pregunta: "Pregunta", respuesta: "Respuesta", tema: "Tema"}
+        {pregunta: "", respuesta: "", tema: ""}
         );
     res.render ('quizes/new', {quiz: quiz, errors: []});
 };
@@ -100,7 +100,7 @@ exports.update = function(req,res) {
                 res.render('quizes/edit', {quiz:req.quiz, errors:err.errors});
             } else {
                 req.quiz
-                    .save( {fields: ["pregunta","respuesta"]})
+                    .save( {fields: ["pregunta","respuesta","tema"]})
                     .then(            function(){res.redirect('/quizes');});
             } //redireccion HTTP a lista de preguntas (URL relativo)
         }
