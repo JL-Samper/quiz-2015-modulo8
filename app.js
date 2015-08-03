@@ -29,6 +29,7 @@ app.use(session());
 app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, 'public')));
 
+// helpers dinamicos
 app.use(function(req,res,next) {
     
     //guardar path en session.redir para despues de login
@@ -39,6 +40,8 @@ app.use(function(req,res,next) {
        res.locals.session = req.session;
        next();
 });
+
+
 
 app.use('/', routes);
 app.use('/users', users);

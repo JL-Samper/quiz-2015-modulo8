@@ -14,7 +14,7 @@ module.exports = function (sequelize, DataTypes) {
             validate: {notEmpty: {msg: "-> Falta Respuesta"}}
                     },
          tema: {
-             type: DataTypes.ENUM('otro','humanidades','ocio','ciencia','tecnologia')
+             type: DataTypes.ENUM('Otro','Humanidades','Ocio','Ciencia','Tecnologia')
         }
         }
     );
